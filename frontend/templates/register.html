@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="../static/auth.css">
+
+    <title>Sign-Up</title>
+</head>
+<body>
+    <!--I separated login from register and move it to this file-->
+    <!--I can't get my alert message here using jinja-->
+    <div class="form signup" id="signup-form">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+            messages %} {% for category, message in messages %} {% if category ==
+            'error' %}
+            <div class="alert alert-danger alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% else %}
+            <div class="alert alert-success alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %} {% endfor %} {% endif %} {% endwith %}
+        
+            <!--The code above was supposed to be the err/res msg on the signup form-->
+        <span class="title">Registration</span>
+        <form action="/sign_up" method="POST">
+            <div class="input-field">
+                <input type="text" placeholder="Enter Username" name="rusername">
+                <i class="uil uil-user"></i>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Enter your email" name="remail">
+                <i class="uil uil-envelope icon"></i>
+            </div>
+            <div class="input-field">
+                <input type="password" class="password" placeholder="Create a password" name="rpassword" >
+                <i class="uil uil-lock icon"></i>
+            </div>
+            <div class="input-field">
+                <input type="password" class="password" placeholder="Confirm a password" name="rconfirm_password" >
+                <i class="uil uil-lock icon"></i>
+                <i class="uil uil-eye-slash showHidePw"></i>
+            </div>
+            <div class="checkbox-text">
+                <div class="checkbox-content">
+                    <input type="checkbox" id="termCon">
+                    <label for="termCon" class="text">I accepted all terms and conditions</label>
+                </div>
+            </div>
+            <div class="input-field button">
+                <input type="submit" value="Signup">
+            </div>
+        </form>
+        <div class="login-signup">
+            <span class="text">Already a member?
+                <a href="#" class="text login-link">Login Now</a>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

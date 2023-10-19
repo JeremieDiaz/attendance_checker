@@ -13,7 +13,7 @@
     <title>Login & Registration Form</title> 
 </head>
 <body>
-    
+    <!--I already connect the login-form to the api, not yet however, to the db-->
     <div class="container">
         <div class="forms">
             <!-- Login Form -->
@@ -35,53 +35,16 @@
                             <label for="logCheck" class="text">Remember me</label>
                         </div>
                         
-                        <a href="#" class="text" onclick="window.location.href='resetpass.html'">Forgot password?</a>
+                        <a href="#" class="text">Forgot password?</a>
                     </div>
                     <div class="input-field button">
-                        <input type="button" value="Login" onclick="window.location.href='dashboard.html'">
+                        <input type="submit" value="Login">
                         
                     </div>
                 </form>
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="#" class="text signup-link">Signup Now</a>
-                    </span>
-                </div>
-            </div>
-            <!-- Registration Form -->
-            <div class="form signup">
-                <span class="title">Registration</span>
-                <form action="" method="post">
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter Username" name="rusername" required>
-                        <i class="uil uil-user"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter your email" name="remail" required>
-                        <i class="uil uil-envelope icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="password" placeholder="Create a password" name="rpassword" required>
-                        <i class="uil uil-lock icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="password" placeholder="Confirm a password" name="rconfirm_password" required>
-                        <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
-                    </div>
-                    <div class="checkbox-text">
-                        <div class="checkbox-content">
-                            <input type="checkbox" id="termCon" required>
-                            <label for="termCon" class="text">I accepted all terms and conditions</label>
-                        </div>
-                    </div>
-                    <div class="input-field button">
-                        <input type="button" value="Signup">
-                    </div>
-                </form>
-                <div class="login-signup">
-                    <span class="text">Already a member?
-                        <a href="#" class="text login-link">Login Now</a>
+                        <a class="text signup-link">Signup Now</a>
                     </span>
                 </div>
             </div>
