@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2023 at 05:29 AM
+-- Generation Time: Oct 19, 2023 at 02:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `attendance_checker`
+-- Database: `database_checker`
 --
 
 -- --------------------------------------------------------
@@ -69,7 +69,7 @@ INSERT INTO `time_type` (`time_type_id`, `time_type_name`) VALUES
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
   `password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
