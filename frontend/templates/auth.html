@@ -2,30 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="../static/auth.css">
-         
-    <title>Login & Registration Form</title> 
+    <title>Login & Registration Form</title>
 </head>
 <body>
-    
     <div class="container">
         <div class="forms">
-            <!-- Login Form -->
             <div class="form login">
                 <span class="title">Login</span>
                 <form action="/login" method="POST">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" name="lemail" required>
+                        <input type="text" placeholder="Enter your email" name="email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" name="lpassword" required>
+                        <input type="password" class="password" placeholder="Enter your password" name="password" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
@@ -34,24 +29,26 @@
                             <input type="checkbox" id="logCheck" required>
                             <label for="logCheck" class="text">Remember me</label>
                         </div>
-                        
-                        <a href="#" class="text" onclick="window.location.href='resetpass.html'">Forgot password?</a>
+                        <a href="resetpass.html" class="text">Forgot password?</a>
                     </div>
                     <div class="input-field button">
-                        <input type="button" value="Login" onclick="window.location.href='dashboard.html'">
-                        
+                        <input type="submit" value="Login">
                     </div>
                 </form>
-                <div class="login-signup">
-                    <span class="text">Not a member?
-                        <a href="#" class="text signup-link">Signup Now</a>
-                    </span>
+                {% if error %}
+                <div class="error-message">
+                    <p>{{ error }}</p>
                 </div>
-            </div>
-            <!-- Registration Form -->
+                {% endif %}
+                
+                
+                <div class="login-signup">
+                    <span class="text">Not a member? <a href="#" class="text signup-link">Signup Now</a></span>
+                </div>
+            </div>   
             <div class="form signup">
                 <span class="title">Registration</span>
-                <form action="" method="post">
+                <form action="/register" method="POST">
                     <div class="input-field">
                         <input type="text" placeholder="Enter Username" name="rusername" required>
                         <i class="uil uil-user"></i>
@@ -76,17 +73,15 @@
                         </div>
                     </div>
                     <div class="input-field button">
-                        <input type="button" value="Signup">
+                        <input type="submit" value="Signup">
                     </div>
                 </form>
                 <div class="login-signup">
-                    <span class="text">Already a member?
-                        <a href="#" class="text login-link">Login Now</a>
-                    </span>
+                    <span class="text">Already a member? <a href="#" class="text login-link">Login Now</a></span>
                 </div>
             </div>
         </div>
     </div>
-     <script src="js/auth.js"></script> 
+    <script src="js/auth.js"></script>
 </body>
 </html>
