@@ -21,7 +21,16 @@ def home():
 @app.route('/dashboard')
 def dashboard():
     if 'email' in session:
-        return render_template('dashboard.html', email=session['email'])
+        email = session['email']
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT username FROM users WHERE email = %s", (email,))
+        user_data = cur.fetchone()
+        cur.close()
+
+        if user_data:
+            username = user_data[0]
+            return render_template('dashboard.html', email=email, username=username)
+    
     return redirect(url_for('home'))
 
 @app.route('/login', methods=['POST'])
