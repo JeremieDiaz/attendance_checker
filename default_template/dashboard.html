@@ -21,10 +21,15 @@
         width: 400px; /* Adjust the width as needed */
         margin-top: 20px;
       }
+</style>
 
+<style>
       #time-in,
       #time-out {
-        width: 45%; /* Adjust the width as needed */
+        width: 45%;
+        height: 250%;
+        color: black;
+        background-color: rgb(176, 173, 230); /* Adjust the width as needed */
       }
     </style>
   </head>
@@ -66,7 +71,14 @@
     </div>
 
     <div id="clock-container">
-      <canvas id="canvas" width="400" height="400"></canvas>
+      <canvas id="canvas" width="300" height="300"></canvas>
+      <div class="button-container">
+        <button id="time-in">TIME-IN</button>
+        <button id="time-out">TIME-OUT</button>
+      </div>
+      <br>
+      <br>
+      <br>
       <table style="border: 1">
         <tr>
           <th>TIME</th>
@@ -88,11 +100,9 @@
           <td>3:30 PM</td>
           <td>time-out</td>
         </tr>
+        <br>
       </table>
-      <div class="button-container">
-        <button id="time-in">TIME-IN</button>
-        <button id="time-out">TIME-OUT</button>
-      </div>
+  
     </div>
 
     <script>
